@@ -22,8 +22,5 @@ object Executor {
     in.close()
     client.close()
     server.close()
-
-
   }
-
 }

@@ -22,8 +22,5 @@ object Text {
     in.close()
     client.close()
     server.close()
-
-
   }
-
 }
