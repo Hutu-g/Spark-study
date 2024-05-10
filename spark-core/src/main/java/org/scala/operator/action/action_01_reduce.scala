@@ -33,15 +33,13 @@ object action_01_reduce {
     println(rdd.takeOrdered(3)(Ordering.Int.reverse).mkString(","))
     //7.aggregate() aggregateByKey 只参与分区内计算 aggregate分区内分区间都参加计算
     println(rdd.aggregate(10)(_ + _, _ + _))
-    //8.fold()
+    //8.fold() 40
     println(rdd.fold(10)(_ + _))
-    //9.countByValue()
+    //9.countByValue()  Map(4 -> 1, 2 -> 1, 1 -> 1, 3 -> 1)
     println(rdd.countByValue())
     val rdd2: RDD[(String, Int)] = sc.makeRDD(List(("a", 1), ("a", 2), ("b", 3), ("b", 4)))
+    //10.countByKey()   根据Map(a -> 2, b -> 2)
     println(rdd2.countByKey())
-
-
-
     //10.save()
 
     //11.foreach()
